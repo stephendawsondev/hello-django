@@ -6,6 +6,11 @@
     <title>Todos</title>
   </head>
   <body>
-    <h1>Things I do</h1>
+    <h1>Things to do:</h1>
+    <ul>
+      {% for item in items %}
+      <li>{{ item.name }} - <span>{{ item.done }}</span></li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
