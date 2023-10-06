@@ -8,8 +8,14 @@
   <body>
     <h1>Things to do:</h1>
     <ul>
-      {% for item in items %}
-      <li>{{ item.name }} - <span>{{ item.done }}</span></li>
+      {% for item in items %} 
+        {% if item.done %}
+        <li><strike>{{ item.name }}</strike></li>
+        {% else %}
+        <li>{{ item.name }} - <span>{{ item.done }}</span></li>
+        {% endif %}
+        {% empty %}
+        <li>Nothing to do!</li>
       {% endfor %}
     </ul>
   </body>
