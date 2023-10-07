@@ -10,9 +10,9 @@
     <ul>
       {% for item in items %} 
         {% if item.done %}
-        <li><strike>{{ item.name }}</strike> <span><a href="/edit/{{ item.id }}">Edit</a></span></li>
+        <li><strike>{{ item.name }}</strike> <span><a href="/toggle/{{ item.id }}">Toggle</a></span> <span><a href="/edit/{{ item.id }}">Edit</a></span></li>
         {% else %}
-        <li>{{ item.name }} <span><a href="/edit/{{ item.id }}">Edit</a></span></li>
+        <li>{{ item.name }} <span><a href="/toggle/{{ item.id }}">Toggle</a></span> <span><a href="/edit/{{ item.id }}">Edit</a></span></li>
         {% endif %}
         
         {% empty %}
