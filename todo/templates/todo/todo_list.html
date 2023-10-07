@@ -9,12 +9,8 @@
     <h1>Things to do:</h1>
     <ul>
       {% for item in items %} 
-        {% if item.done %}
-        <li><strike>{{ item.name }}</strike> <span><a href="/toggle/{{ item.id }}">Toggle</a></span> <span><a href="/edit/{{ item.id }}">Edit</a></span></li>
-        {% else %}
-        <li>{{ item.name }} <span><a href="/toggle/{{ item.id }}">Toggle</a></span> <span><a href="/edit/{{ item.id }}">Edit</a></span></li>
-        {% endif %}
-        
+        {% if item.done %}<li><strike>{{ item.name }}</strike>{% else %}<li>{{ item.name }}{% endif %}
+        <span><a href="/toggle/{{ item.id }}">Toggle</a></span> <span><a href="/edit/{{ item.id }}">Edit</a></span> <span><a href="/delete/{{ item.id }}">Delete</a></span></li>
         {% empty %}
         <li>Nothing to do!</li>
       {% endfor %}
